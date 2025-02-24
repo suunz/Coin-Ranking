@@ -78,7 +78,6 @@ class CoinsListViewController: UIViewController {
 // MARK: - TableView DataSource & Delegate
 extension CoinsListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.coins.count)
         return viewModel.coins.count
     }
 

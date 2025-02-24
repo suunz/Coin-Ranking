@@ -19,14 +19,15 @@ class CoinCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        coinImage.layer.cornerRadius = coinImageView.frame.height / 2
         coinImage.clipsToBounds = true
     }
     
     func configure() {
         coinName.text = coin?.name ?? ""
-        priceLabel.text = coin?.price ?? ""
+        coinName.font = UIFont.boldSystemFont(ofSize: coinName.font.pointSize)
+        var price: String = ""
+        price = CommonFunctions().getPrice(price: coin?.price ?? "")
+        priceLabel.text = price
         
         // Load Image Asynchronously
         
